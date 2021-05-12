@@ -11,6 +11,7 @@ var PROTOCOL_DELIMITER = '\n';
  * is designed to be used by `atomic-batcher` as a way to share
  * a single UDP socket for sending multiple data blocks.
  * 
+ * @private
  * @param {object} ops - Details of the data to send
  * @param {Function} callback - The function to call when done
  */
@@ -74,6 +75,7 @@ function sendMessage (client, data, batchCallback) {
  * Class to mimic the Socket interface for a UDP client, but to provided
  * batching of outgoing sends using temporary Sockets that are created and
  * destroyed as needed.
+ * @private
  */
 function BatchingTemporarySocket() {
   this.batchSend = batcher(batchSendData);
@@ -82,6 +84,7 @@ function BatchingTemporarySocket() {
 /**
  * Provide the same signature as the Socket.send method but the work will be
  * batched to share temporary UDP sockets whenever possible.
+ * @private
  */
 BatchingTemporarySocket.prototype.send = function (msg, offset, length, port, address, callback) {
   var work = {
@@ -106,6 +109,7 @@ var SegmentEmitter = {
 
   /**
    * Returns the formatted segment JSON string.
+   * @memberof SegmentEmitter
    */
 
   format: function format(segment) {
@@ -114,6 +118,7 @@ var SegmentEmitter = {
 
   /**
    * Creates a UDP socket connection and send the formatted segment.
+   * @memberof SegmentEmitter
    * @param {Segment} segment - The segment to send to the daemon.
    */
 
@@ -149,7 +154,7 @@ var SegmentEmitter = {
   /**
    * Configures the address and/or port the daemon is expected to be on.
    * @param {string} address - Address of the daemon the segments should be sent to. Should be formatted as an IPv4 address.
-   * @module SegmentEmitter
+   * @memberof SegmentEmitter
    * @function setDaemonAddress
    */
 
@@ -159,7 +164,7 @@ var SegmentEmitter = {
 
   /**
    * Get the UDP IP the emitter is configured to.
-   * @module SegmentEmitter
+   * @memberof SegmentEmitter
    * @function getIp
    */
 
@@ -169,7 +174,7 @@ var SegmentEmitter = {
 
   /**
    * Get the UDP port the emitter is configured to.
-   * @module SegmentEmitter
+   * @memberof SegmentEmitter
    * @function getPort
    */
 
@@ -179,7 +184,7 @@ var SegmentEmitter = {
 
   /**
    * Forces the segment emitter to create a new socket on send, and close it on complete.
-   * @module SegmentEmitter
+   * @memberof SegmentEmitter
    * @function disableReusableSocket
    */
 

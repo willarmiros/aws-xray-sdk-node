@@ -1,9 +1,6 @@
 /**
- * @module http_p
- */
-
-/**
  * This module patches the HTTP and HTTPS node built-in libraries and returns a copy of the module with tracing enabled.
+ * @module http_p
  */
 
 var url = require('url');

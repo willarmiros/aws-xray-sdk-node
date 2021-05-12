@@ -1,5 +1,5 @@
 /**
- * Capture module.
+ * Module for capturing AWS SDK V2 clients individually or en masse.
  * @module aws_p
  */
 
@@ -22,8 +22,8 @@ var throttledErrorDefault = function throttledErrorDefault() {
  * All created clients will automatically be captured.  See 'captureAWSClient'
  * for additional details.
  * @param {AWS} awssdk - The Javascript AWS SDK.
- * @alias module:aws_p.captureAWS
- * @returns {AWS} 
+ * @memberof aws_p
+ * @returns {AWS} - The Javascript AWS SDK with all clients instrumented.
  * @see https://github.com/aws/aws-sdk-js
  */
 
@@ -46,7 +46,7 @@ var captureAWS = function captureAWS(awssdk) {
  * For manual mode, a param with key called 'Segment' is required as a part of the AWS
  * call paramaters, and must reference a Segment or Subsegment object.
  * @param {AWS.Service} service - An instance of a AWS service to wrap.
- * @alias module:aws_p.captureAWSClient
+ * @memberof aws_p
  * @returns {AWS.Service}
  * @see https://github.com/aws/aws-sdk-js
  */

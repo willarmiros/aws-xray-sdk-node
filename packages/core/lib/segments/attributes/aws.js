@@ -35,8 +35,8 @@ Aws.prototype.addData = function addData(data) {
 
 /**
  * Overrides the default whitelisting file to specify what params to capture on each AWS Service call.
+ * @private
  * @param {string|Object} source - The path to the custom whitelist file, or a whitelist source JSON object.
- * @exports setAWSWhitelist
  */
 
 var setAWSWhitelist = function setAWSWhitelist(source) {
@@ -48,8 +48,8 @@ var setAWSWhitelist = function setAWSWhitelist(source) {
 
 /**
  * Appends to the default whitelisting file to specify what params to capture on each AWS Service call.
+ * @private
  * @param {string|Object} source - The path to the custom whitelist file, or a whitelist source JSON object.
- * @exports appendAWSWhitelist
  */
 
 var appendAWSWhitelist = function appendAWSWhitelist(source) {

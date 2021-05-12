@@ -17,7 +17,7 @@ try {
 var UNKNOWN = 'unknown';
 
 /**
- * A module representing the AWSXRay SDK.
+ * A module representing the AWS X-Ray SDK.
  * @namespace AWSXRay
  */
 
@@ -26,7 +26,7 @@ var AWSXRay = {
   /**
    * @memberof AWSXRay
    * @type {object}
-   * @namespace AWSXRay.plugins
+   * @namespace plugins
    */
 
   plugins: {
@@ -222,7 +222,7 @@ var AWSXRay = {
   /**
    * @memberof AWSXRay
    * @type {object}
-   * @namespace AWSXRay.database
+   * @namespace database
    */
 
   database: {
